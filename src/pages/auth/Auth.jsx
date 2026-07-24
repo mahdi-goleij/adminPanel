@@ -30,7 +30,7 @@ export const Auth = () => {
         <footer>
           <SvgAuthFooter className='auth-footer-svg'/>
           <div className="auth-footer-inner">
-            <h2>webM</h2>
+            <h2>webMG</h2>
             <SvgLogo />
           </div>
         </footer>
