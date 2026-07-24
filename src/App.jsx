@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { PanelLayout } from "./layouts/PanelLayout";
-import { Auth } from "./pages/auth/auth";
+import { Auth } from "./pages/auth/Auth";
 import { useEffect } from "react";
 import { useTheme } from "./hooks/theme-hooks";
 import './config/i18n'
