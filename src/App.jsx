@@ -17,8 +17,13 @@ function App() {
   const {initTheme} = useTheme();
 
   useEffect(()=>{
-    let dir = i18n.language === 'fa' ? 'rtl' : 'ltr';
-    document.documentElement.dir = dir;
+    const rtlLanguages = ['fa','ar'];
+  
+    document.documentElement.dir =
+      rtlLanguages.includes(i18n.language)
+        ? 'rtl'
+        : 'ltr';
+  
   },[i18n.language]);
 
 
