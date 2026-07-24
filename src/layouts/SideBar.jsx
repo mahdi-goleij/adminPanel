@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SvgLogo } from "../icons/Svglogo";
+import { SvgLogo } from "../icons/SvgLogo";
 import { SvgPlus } from "../icons/SvgPlus";
 import "./SideBar.css";
 import { menu } from "../constants/layout-const";

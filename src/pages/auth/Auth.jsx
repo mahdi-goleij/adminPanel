@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Auth.css";
-import { AnimatedBorder } from "../../components/AnimatedBorder";
-import { SvgLogo } from "../../icons/Svglogo";
+import { AnimatedBorder } from "../../components/AnimatedBorder/index";
+import { SvgLogo } from "../../icons/SvgLogo";
 import { LoginForm } from "./_components/LoginForm";
 import { RegisterForm } from "./_components/RegisterForm";
 import { SvgAuthFooter } from "../../icons/SvgAuthFooter";
