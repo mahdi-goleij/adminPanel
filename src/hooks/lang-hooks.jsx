@@ -10,7 +10,7 @@ export const useLang = () => {
         setLang(item.symbol)
         i18next.changeLanguage(item.symbol)
         localStorage.setItem('lang' , item.symbol)
-        // document.documentElement.dir = item.direction;
+        document.documentElement.dir = item.direction;
       }
       return{handaleLange}
 }
