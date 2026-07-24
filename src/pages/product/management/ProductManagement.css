@@ -1,0 +1,204 @@
+.product-head {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  & button {
+    width: 200px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding-inline: 20px;
+    border-radius: var(--br);
+    background-color: var(--color-3);
+    border: none;
+    & svg {
+      width: 30px;
+      stroke: var(--color-1);
+    }
+    @media (width < 767px) {
+      width: 100%;
+    }
+  }
+}
+
+.product-list .rdt_Table {
+  background-color: transparent !important;
+}
+.product-list .rdt_TableHeadRow {
+  background-color: var(--color-2);
+  color: var(--color-6);
+  border-radius: 7px;
+}
+.product-list .rdt_TableRow {
+  background-color: var(--color-4);
+  color: var(--color-6);
+  margin-block: 5px;
+  border-radius: 7px;
+}
+.product-list .rdt_Pagination {
+  background-color: var(--color-2) !important;
+  color: var(--color-6) !important;
+  border-radius: 7px;
+}
+
+/* مهمممممممم */
+.rdt_selectWrapper {
+  background-color: var(--color-1) !important;
+  color: var(--color-6) !important;
+}
+
+.product-list .rdt_TableRow:hover {
+  background-color: transparent !important;
+  color: var(--color-3) !important;
+  outline-color: var(--color-3) !important;
+  /* border-color: var(--color-3) !important; */
+}
+
+.product-list-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-block: 5px; 
+  & img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  } 
+}
+
+.product-list-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #0781c3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  & svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--color-6);
+  }
+}
+
+.product-list-tag-enable {
+  width: 70px;
+  display: block;
+  text-align: center;
+  background-color: var(--color-3);
+  color: var(--color-1);
+  border-radius: var(--br);
+  padding: 7px;
+}
+.product-list-tag-disable {
+  width: 70px;
+  display: block;
+  text-align: center;
+  background-color: tomato;
+  color: var(--color-1);
+  border-radius: var(--br);
+  padding: 7px;
+}
+
+.product-filter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.product-filter-search {
+  width: 200px;
+  height: 45px;
+  border: 1px solid var(--color-4);
+  border-radius: var(--br);
+  display: flex;
+  align-items: center;
+  & input {
+    width: calc(100% - 40px);
+    height: 45px;
+    border: none;
+    padding-inline-start: 8px;
+    background-color: transparent;
+    outline: none;
+    color: var(--color-6);
+  }
+  & div {
+    width: 40px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & svg {
+      width: 30px;
+      stroke: var(--color-7);
+    }
+  }
+  @media (width < 767px) {
+    width: 100%;
+  }
+}
+
+.product-filter-status {
+  width: 200px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-4);
+  border-radius: var(--br);
+  @media (width < 767px) {
+    width: 100%;
+  }
+}
+.product-filter-status-btn {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  color: var(--color-7);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.product-filter-status-btn-active {
+  background-color: var(--color-3);
+  color: var(--color-1);
+}
+
+.product-filter-date {
+  width: 200px;
+  @media (width < 767px) {
+    width: 100%;
+  }
+}
+
+.product-filter-date .rmdp-container {
+  width: 100%;
+  & .rmdp-input {
+    width: 100%;
+    height: 45px;
+    color: var(--color-6);
+    background-color: transparent;
+    border-color: var(--color-4);
+    text-align: center;
+  }
+}
+
+.product-filter-date .rmdp-wrapper {
+  background-color: var(--color-2);
+}
+.product-filter-date .rmdp-header-values {
+  color: var(--color-6);
+}
+.product-filter-date .rmdp-day {
+  color: var(--color-6);
+}
+.product-filter-date .rmdp-shadow {
+  box-shadow: 0 0 5px #555;
+}
