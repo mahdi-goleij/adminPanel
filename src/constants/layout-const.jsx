@@ -29,13 +29,13 @@ export const menu = [
       icon: <SvgPlugin className="sideBar-cont-item-svg" />,
       submenu: [
         {
-          title: "صفحه اول",
+          title: "tools.page.page_1",
         },
         {
-          title: "صفحه دوم",
+          title: "tools.page.page_2",
         },
         {
-          title: "صفحه سوم",
+          title: "tools.page.page_3",
         },
       ],
     },
@@ -44,13 +44,13 @@ export const menu = [
       icon: <SvgWorld className="sideBar-cont-item-svg" />,
       submenu: [
         {
-          title: "صفحه اول",
+          title: "map.page.page_1",
         },
         {
-          title: "صفحه دوم",
+          title: "map.page.page_2",
         },
         {
-          title: "صفحه سوم",
+          title: "map.page.page_3",
         },
       ],
     },

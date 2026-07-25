@@ -47,7 +47,7 @@ export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
         <div className="sideBar-center">
           <button className="sideBar-center-newProject">
             <SvgPlus />
-            <span>پروژه جدید</span>
+            <span>{t('sidebar.new_project_btn')}</span>
           </button>
           <ul>
             {menu.map((item, index) => (

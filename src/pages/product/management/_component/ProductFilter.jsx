@@ -6,6 +6,7 @@ import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import DatePickerModule from "react-multi-date-picker";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const ProductFilter = () => {
   const DatePicker = DatePickerModule.default;
@@ -16,6 +17,9 @@ export const ProductFilter = () => {
     start: searchParams.get("start") || "",
     end: searchParams.get("end") || "",
   });
+
+  const {t} = useTranslation();
+
 
   // برای بررسی معتبر بودن مقادیر برای اضافه شدن به دامین
   useEffect(() => {
@@ -56,9 +60,6 @@ export const ProductFilter = () => {
     }
   };
 
-  // useEffect(()=>{
-
-  // },[value])
 
   return (
     <>
@@ -68,7 +69,7 @@ export const ProductFilter = () => {
             value={filter?.search}
             onChange={handleSearch}
             type="text"
-            placeholder="جست‌و‌جوی محصول..."
+            placeholder={t('product.product_filter.search_product')}
           />
           <div className="">
             <SvgSearch />
@@ -81,7 +82,15 @@ export const ProductFilter = () => {
               filter?.status === "active" && "product-filter-status-btn-active"
             }`}
           >
-            فعال
+            {t('product.product_filter.status.enable')}
+          </button>
+          <button
+            onClick={() => handleStatus("all")}
+            className={`product-filter-status-btn ${
+              filter?.status === "all" && "product-filter-status-btn-active"
+            }`}
+          >
+            {t('product.product_filter.status.all')}
           </button>
           <button
             onClick={() => handleStatus("deactive")}
@@ -90,20 +99,12 @@ export const ProductFilter = () => {
               "product-filter-status-btn-active"
             }`}
           >
-            غیر فعال
-          </button>
-          <button
-            onClick={() => handleStatus("all")}
-            className={`product-filter-status-btn ${
-              filter?.status === "all" && "product-filter-status-btn-active"
-            }`}
-          >
-            همه
+            {t('product.product_filter.status.disable')}
           </button>
         </div>
         <div className="product-filter-date">
           <DatePicker
-            placeholder="انتخاب بازه زمانی"
+            placeholder={t('product.product_filter.time_range')}
             range
             value={[filter?.start, filter?.end]}
             onChange={handleDate}

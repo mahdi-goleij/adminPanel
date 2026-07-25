@@ -13,7 +13,7 @@ export const ProductManagement = () => {
   const {t} = useTranslation();
 
   useEffect(() => {
-    setTitlePage(t('product.product_page_title'));
+    setTitlePage(t('product.product_manage.product_management'));
   }, []);
   return (
     <>

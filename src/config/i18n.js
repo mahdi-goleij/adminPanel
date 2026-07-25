@@ -8,14 +8,25 @@ i18next.use(initReactI18next).init({
         main_header: {
           search_placeholder: "Search...",
         },
-        dropdown: {
+        profilesideBar: {
+          edit_btn: "Edit Profile"
+        },
+        sidebar: {
+          new_project_btn: "New Project"
+        },
+        theme: {
           light_theme: "light",
           dark_theme: "dark",
+          label: "Powered by"
+        },
+        dropdown: {
           profile: "Profile",
-          dark_theme: "LogOut",
+          logout: "LogOut",
         },
         dashboard: {
           sale: "The amount of sales",
+          currency_unit: "Rial",
+
         },
         layout: {
           dashboard_menu: "Dashboard",
@@ -34,6 +45,32 @@ i18next.use(initReactI18next).init({
           product_add: {
             product_add:"Add Products"
           },
+          product_filter: {
+            time_range:"Select Time Range",
+            search_product:"Product Search",
+            status: {
+              all: "َAll",
+              enable: "Enable",
+              disable: "Disable",
+            }
+          },
+        },
+        tools:{
+          page:{
+            page_1:"Page One",
+            page_2:"Page Two",
+            page_3:"Page Three",
+          },
+        },
+        map:{
+          page:{
+            page_1:"Page One",
+            page_2:"Page Two",
+            page_3:"Page Three",
+          },
+        },
+        settings: {
+          page_title:"setting",
         },
       },
     },
@@ -42,14 +79,24 @@ i18next.use(initReactI18next).init({
         main_header: {
           search_placeholder: "جست و جو کنید...",
         },
-        dropdown: {
+        sidebar: {
+          new_project_btn: "پروژه جدید"
+        },
+        profilesideBar: {
+          edit_btn: "ویرایش پروفایل"
+        },
+        theme: {
           light_theme: "روشن",
           dark_theme: "تیره",
+          label: "قدرت گرفته توسط"
+        },
+        dropdown: {
           profile: "پروفایل",
-          dark_theme: "خروج",
+          logout: "خروج",
         },
         dashboard: {
           sale: "میزان فروش",
+          currency_unit: "ریال",
         },
         layout: {
           dashboard_menu: "داشبورد",
@@ -59,22 +106,49 @@ i18next.use(initReactI18next).init({
           dashboard_settings: "تنظیمات",
         },
         product: {
-          product_management:"مدیریت محصولات",
           product_btn_add: "افزودن محصول جدید",
           product_name: "نام محصول",
           product_manage: {
-            product_page_title: "مدیریت محصولات",
+            product_management:"مدیریت محصولات",
+            // product_page_title: "مدیریت محصولات",
           },
           product_add: {
             product_add:"ثبت محصولات"
           },
+          product_filter: {
+            time_range:"انتخاب بازه زمانی",
+            search_product:"جست‌و‌جوی محصول",
+            status: {
+              all: "همه",
+              enable: "فعال",
+              disable: "غیرفعال",
+            }
+          },
         },
+        tools:{
+          page:{
+            page_1:"صفحه اول",
+            page_2:"صفحه دوم",
+            page_3:"صفحه سوم",
+          },
+        },
+        map:{
+          page:{
+            page_1:"صفحه اول",
+            page_2:"صفحه دوم",
+            page_3:"صفحه سوم",
+          },
+        },
+        settings: {
+          page_title:"تنظیمات",
+        },
+
       },
     },
   },
   lng: localStorage.getItem("lang") || "fa",
   fallbackLng: "en",
-
+  
   interpolation: {
     escapeValue: false,
   },

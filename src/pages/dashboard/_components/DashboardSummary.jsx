@@ -20,7 +20,7 @@ export const DashboardSummary = () => {
                     </div>
                     <div className="dash-right-summary-item-description">
                         <p>{t('dashboard.sale')}</p>
-                        <h4>120,000 تومان</h4>
+                        <h4>120,000 {t('dashboard.currency_unit')}</h4>
                         <span>25%</span>
                     </div>
                 </div>

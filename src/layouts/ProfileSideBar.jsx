@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next'
 import ImgProfile from '../assets/media/profile.png'
 
 export const ProfileSideBar = () => {
+    const {t} = useTranslation();
     return (
         <>
         <div className="sideBar-profile">
@@ -11,7 +13,7 @@ export const ProfileSideBar = () => {
                         <span>مهدی گلیج</span><span>@MahdiGoleij</span>
                     </div>
                 </div>
-                <button>ویرایش پروفایل</button>
+                <button>{t('profilesideBar.edit_btn')}</button>
             </div>
         </div>
         

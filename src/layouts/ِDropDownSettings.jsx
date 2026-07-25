@@ -67,8 +67,8 @@ export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
         </div>
 
         <div className="drop-setting-theme">
-          <button onClick={()=> {handleTheme('light')}} className={`drop-setting-theme-btn ${theme === 'light' && 'drop-setting-theme-btn-active'}`}>{t('dropdown.light_theme')}</button>
-          <button onClick={()=> {handleTheme('dark')}} className={`drop-setting-theme-btn ${theme === 'dark' && 'drop-setting-theme-btn-active'}`}>{t('dropdown.dark_theme')}</button>
+          <button onClick={()=> {handleTheme('light')}} className={`drop-setting-theme-btn ${theme === 'light' && 'drop-setting-theme-btn-active'}`}>{t('theme.light_theme')}</button>
+          <button onClick={()=> {handleTheme('dark')}} className={`drop-setting-theme-btn ${theme === 'dark' && 'drop-setting-theme-btn-active'}`}>{t('theme.dark_theme')}</button>
         </div>
 
         <div className="drop-setting-botton">
@@ -78,7 +78,7 @@ export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
           </div>
           <div className="drop-setting-botton-item">
             <SvgLogOut />
-            <span>خروج</span>
+            <span>{t('dropdown.logout')}</span>
           </div>
         </div>
       </div>

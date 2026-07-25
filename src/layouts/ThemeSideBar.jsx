@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../hooks/theme-hooks";
 import { useLayoutStore } from "../store/LayoutStore";
 
@@ -8,6 +9,7 @@ export const ThemeSideBar = () => {
   const {theme} = useLayoutStore();
 
   const {handleTheme} = useTheme();
+  const {t} = useTranslation();
 
 
   return (
@@ -22,7 +24,7 @@ export const ThemeSideBar = () => {
               theme === "light" && "sideBar-theme-inner-btn-active"
             }`}
           >
-            روشن
+            {t('theme.light_theme')}
           </button>
           <button
             onClick={() => {
@@ -32,10 +34,10 @@ export const ThemeSideBar = () => {
               theme === "dark" && "sideBar-theme-inner-btn-active"
             }`}
           >
-            تاریک
+            {t('theme.dark_theme')}
           </button>
         </div>
-        <span className="sideBar-theme-label">قدرت گرفته توسط MahdiGoleij</span>
+        <span className="sideBar-theme-label">{t('theme.label')} MahdiGoleij</span>
       </div>
     </>
   );
