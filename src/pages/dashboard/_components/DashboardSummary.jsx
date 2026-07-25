@@ -19,7 +19,7 @@ export const DashboardSummary = () => {
                         <SvgDashboard />
                     </div>
                     <div className="dash-right-summary-item-description">
-                        <p>{t('sale')}</p>
+                        <p>{t('dashboard.sale')}</p>
                         <h4>120,000 تومان</h4>
                         <span>25%</span>
                     </div>

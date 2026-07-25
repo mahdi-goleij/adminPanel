@@ -3,6 +3,7 @@ import {SvgLogOut} from "../icons/SvgLogOut"
 import { useLayoutStore } from "../store/LayoutStore";
 import { useTheme } from "../hooks/theme-hooks";
 import { useLang } from "../hooks/lang-hooks";
+import { useTranslation } from "react-i18next";
 
 export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
   const {theme , lang} = useLayoutStore();
@@ -10,6 +11,7 @@ export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
   const {handleTheme} = useTheme();
 
   const {handaleLange} = useLang()
+  const {t} = useTranslation();
 
 
 
@@ -25,16 +27,16 @@ export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
       symbol: "en",
       direction: 'ltr',
     },
-    {
-      title: "فرانسوی",
-      symbol: "fr",
-      direction: 'ltr',
-    },
-    {
-      title: "عربی",
-      symbol: "ar",
-      direction: 'rtl',
-    },
+    // {
+    //   title: "فرانسوی",
+    //   symbol: "fr",
+    //   direction: 'ltr',
+    // },
+    // {
+    //   title: "عربی",
+    //   symbol: "ar",
+    //   direction: 'rtl',
+    // },
   ];
 
   return (
@@ -65,14 +67,14 @@ export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
         </div>
 
         <div className="drop-setting-theme">
-          <button onClick={()=> {handleTheme('light')}} className={`drop-setting-theme-btn ${theme === 'light' && 'drop-setting-theme-btn-active'}`}>روشن</button>
-          <button onClick={()=> {handleTheme('dark')}} className={`drop-setting-theme-btn ${theme === 'dark' && 'drop-setting-theme-btn-active'}`}>تاریک</button>
+          <button onClick={()=> {handleTheme('light')}} className={`drop-setting-theme-btn ${theme === 'light' && 'drop-setting-theme-btn-active'}`}>{t('dropdown.light_theme')}</button>
+          <button onClick={()=> {handleTheme('dark')}} className={`drop-setting-theme-btn ${theme === 'dark' && 'drop-setting-theme-btn-active'}`}>{t('dropdown.dark_theme')}</button>
         </div>
 
         <div className="drop-setting-botton">
           <div className="drop-setting-botton-item">
             <SvgUser />
-            <span>پروفایل</span>
+            <span>{t('dropdown.profile')}</span>
           </div>
           <div className="drop-setting-botton-item">
             <SvgLogOut />

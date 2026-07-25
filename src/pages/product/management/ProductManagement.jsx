@@ -5,19 +5,22 @@ import "./ProductManagement.css";
 import { SvgPlus } from "../../../icons/SvgPlus";
 import { ProductFilter } from "./_component/ProductFilter";
 import { SvgEdit } from "../../../icons/SvgEdit";
+import { useTranslation } from "react-i18next";
 
 export const ProductManagement = () => {
   const { setTitlePage } = useLayoutStore();
 
+  const {t} = useTranslation();
+
   useEffect(() => {
-    setTitlePage("مدیریت محصولات");
+    setTitlePage(t('product.product_page_title'));
   }, []);
   return (
     <>
       <div className="product-head">
         <button>
           <SvgPlus />
-          <span>افزودن محصول</span>
+          <span>{t('product.product_btn_add')}</span>
         </button>
       </div>
 

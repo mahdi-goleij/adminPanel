@@ -4,10 +4,12 @@ import ImgProfile from "../assets/media/profile.png";
 import { useContext, useState } from "react";
 import { DropDownSettings } from "./ِDropDownSettings";
 import { useLayoutStore } from "../store/LayoutStore";
+import { useTranslation } from "react-i18next";
 
 export const MainHeader = ({ setHandleSideBar }) => {
   const [visibleDrop, setVisibleDrop] = useState(false);
   const {titlePage} = useLayoutStore()
+  const {t} = useTranslation();
 
 
 
@@ -22,7 +24,7 @@ export const MainHeader = ({ setHandleSideBar }) => {
         </div>
 
         <form className="main-header-center">
-          <input type="text" placeholder="جست و جو کنید" />
+          <input type="text" placeholder={t('main_header.search_placeholder')} />
           <button>
             <SvgSearch />
           </button>

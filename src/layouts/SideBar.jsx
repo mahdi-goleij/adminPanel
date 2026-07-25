@@ -7,10 +7,12 @@ import { ProfileSideBar } from "./ProfileSideBar";
 import { ThemeSideBar } from "./ThemeSideBar";
 import { SvgMenu } from "../icons/SvgMenu";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
   const [activeSubMenu, setActiveSubMenu] = useState(-1);
   const navigate = useNavigate()
+  const {t} = useTranslation()
   
   const handleRoute = (index , item) => {
     if (item.path) {
@@ -57,7 +59,7 @@ export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
               >
                 <button onClick={() => handleRoute(index , item)}>
                   {item.icon}
-                  <span>{item.title}</span>
+                  <span>{t(item.title)}</span>
                 </button>
                 {item.submenu && (
                   <>
@@ -81,12 +83,13 @@ export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
 };
 
 const SubMenu = ({ submenuData, handleRoute , parentIndex }) => {
+  const {t} = useTranslation()
   return (
     <>
       <div className="sideBar-center-item-menu">
         {submenuData.map((item, index) => (
           <div key={index} onClick={()=> handleRoute(parentIndex, item)} className="sideBar-center-item-menu-item">
-            {item.title}
+            {t(item.title)}
           </div>
         ))}
       </div>

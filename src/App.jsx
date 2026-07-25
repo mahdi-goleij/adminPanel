@@ -6,19 +6,19 @@ import { useEffect } from "react";
 import { useTheme } from "./hooks/theme-hooks";
 import './config/i18n'
 import { useTranslation } from "react-i18next";
+import { useLang } from "./hooks/lang-hooks";
 
 
 
 function App() {
 
   const {i18n} = useTranslation();
-
-
   const {initTheme} = useTheme();
+  const {initLang} = useLang();
+
 
   useEffect(()=>{
-    let dir = i18n.language === 'fa' ? 'rtl' : 'ltr';
-    document.documentElement.dir = dir;
+    initLang();
   },[i18n.language]);
 
 

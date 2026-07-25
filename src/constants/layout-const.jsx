@@ -6,26 +6,26 @@ import { SvgMonitor } from "../icons/SvgMonitor";
 
 export const menu = [
     {
-      title: "داشبورد",
+      title: "layout.dashboard_menu",
       icon: <SvgDashboard className="sideBar-cont-item-svg" />,
       path: '/p/dashboard'
     },
     {
-      title: "محصولات",
+      title: "layout.dashboard_product",
       icon: <SvgMonitor className="sideBar-cont-item-svg" />,
       submenu: [
         {
-          title: "مدیریت محصولات",
+          title: "product.product_manage.product_management",
           path: "/p/product/management"
         },
         {
-          title: "افزودن محصولات",
+          title: "product.product_add.product_add",
           path: "/p/product/add"
         },
       ],
     },
     {
-      title: "ابزارها",
+      title: "layout.dashboard_tools",
       icon: <SvgPlugin className="sideBar-cont-item-svg" />,
       submenu: [
         {
@@ -40,7 +40,7 @@ export const menu = [
       ],
     },
     {
-      title: "نقشه",
+      title: "layout.dashboard_map",
       icon: <SvgWorld className="sideBar-cont-item-svg" />,
       submenu: [
         {
@@ -55,7 +55,7 @@ export const menu = [
       ],
     },
     {
-      title: "تنظیمات",
+      title: "layout.dashboard_settings",
       icon: <SvgCog className="sideBar-cont-item-svg" />,
       path:'/p/settings'
       
