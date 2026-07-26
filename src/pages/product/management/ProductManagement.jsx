@@ -10,17 +10,55 @@ import { useTranslation } from "react-i18next";
 export const ProductManagement = () => {
   const { setTitlePage } = useLayoutStore();
 
-  const {t} = useTranslation();
+  const { t } = useTranslation();
+  const columns = [
+    {
+      name: t("product.table.product_name"),
+      selector: (row) => (
+        <>
+          <div className="product-list-name">
+            <img src={row.img} alt="" />
+            <span>{row.name}</span>
+          </div>
+        </>
+      ),
+    },
+    { name: t("product.table.product_price") , selector: (row) => row.price, sortable: true },
+    {
+      name: t("product.table.status"),
+      selector: (row) => (
+        <>
+          {row.status === "enable" && (
+            <span className="product-list-tag-enable">{t("product.table.enable")}</span>
+          )}
+          {row.status === "disable" && (
+            <span className="product-list-tag-disable">{t("product.table.disable")}</span>
+          )}
+        </>
+      ),
+    },
+    { name: t("product.table.create_date"), selector: (row) => row.create, sortable: true },
+    {
+      name: t("product.table.edit_product"),
+      selector: () => (
+        <>
+          <button className="product-list-btn">
+            <SvgEdit />
+          </button>
+        </>
+      ),
+    },
+  ];
 
   useEffect(() => {
-    setTitlePage(t('product.product_manage.product_management'));
-  }, []);
+    setTitlePage(t("product.product_manage.product_management"));
+  }, [t]);
   return (
     <>
       <div className="product-head">
         <button>
           <SvgPlus />
-          <span>{t('product.product_btn_add')}</span>
+          <span>{t("product.product_btn_add")}</span>
         </button>
       </div>
 
@@ -37,46 +75,6 @@ export const ProductManagement = () => {
     </>
   );
 };
-
-const columns = [
-  {
-    name: "نام محصول",
-    selector: (row) => (
-      <>
-        <div className="product-list-name">
-          <img src={row.img} alt="" />
-          <span>{row.name}</span>
-        </div>
-      </>
-    ),
-  },
-  { name: "قیمت محصول", selector: (row) => row.price, sortable: true },
-  {
-    name: "وضعیت",
-    selector: (row) => (
-      <>
-        {row.status === "enable" && (
-          <span className="product-list-tag-enable">فعال</span>
-        )}
-        {row.status === "disable" && (
-          <span className="product-list-tag-disable">غیرفعال</span>
-        )}
-      </>
-    ),
-  },
-  { name: "تاریخ ایجاد", selector: (row) => row.create, sortable: true },
-  {
-    name: "ویرایش محصول",
-    selector: () => (
-      <>
-        
-        <button className="product-list-btn" >
-          <SvgEdit />
-        </button>
-      </>
-    ),
-  },
-];
 
 const products = [
   {

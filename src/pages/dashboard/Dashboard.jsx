@@ -5,13 +5,15 @@ import { DashboardSummary } from "./_components/DashboardSummary";
 import { DashboardChart } from "./_components/DashboardChart";
 import { DashboardOrder } from "./_components/DashboardOrder";
 import { DashboardBlog } from "./_components/DashboardBlog";
+import { useTranslation } from "react-i18next";
 
 export const Dashboard = () => {
   const { setTitlePage } = useLayoutStore();
+  const {t} = useTranslation()
 
   useEffect(() => {
-    setTitlePage("داشبورد");
-  }, []);
+    setTitlePage(t('layout.dashboard_menu'));
+  }, [t]);
 
     return(
         <>

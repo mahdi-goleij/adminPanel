@@ -8,7 +8,7 @@ export const Settings = () => {
 
   useEffect(() => {
     setTitlePage(t('settings.page_title'));
-  }, []);
+  }, [t]);
   return (
     <>
       <h1>settings page</h1>
