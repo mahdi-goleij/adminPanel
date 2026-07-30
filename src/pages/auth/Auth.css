@@ -53,6 +53,18 @@
     border: none;
     cursor: pointer;
 }
+.auth-form-btn-loading {
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--color-3);
+    border: none;
+    cursor: not-allowed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .auth-switch-btn-active {
     background-color: var(--color-3);
     color: var(--color-1);

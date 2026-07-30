@@ -140,11 +140,14 @@
 
 .dash-left {
   width: 30%;
-  height: 685px;
+  height: fit-content;
   border: 2px solid var(--color-4);
   border-radius: 10px;
   background-color: var(--color-2);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   @media (width < 979px) {
     width: 100%;
   }

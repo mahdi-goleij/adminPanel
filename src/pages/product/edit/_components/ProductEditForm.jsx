@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { object, string, number, array } from "yup";
 import { useTranslation } from "react-i18next";
-import { useAddProduct } from "../../../../hooks/product-hooks";
-import { BtnLoader } from "../../../../components/BtnLoader/BtnLoader";
+import { useEditProduct } from "../../../../hooks/product-hooks";
+import {BtnLoader} from "../../../../components/BtnLoader/BtnLoader"
 
-export const ProductAddForm = () => {
-  const [files, setFiles] = useState([]);
-  const { mutate, isPending } = useAddProduct();
+export const ProductEditForm = ({productData}) => {
+  const { mutate, isPending } = useEditProduct(productData?._id);
 
   const { t } = useTranslation();
   let productSchema = object({
@@ -51,6 +50,7 @@ export const ProductAddForm = () => {
     control,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(productSchema),
   });
@@ -63,7 +63,6 @@ export const ProductAddForm = () => {
   const onSubmit = (data) => {
     const finalData = {
       ...data,
-      image: files,
     };
     let formData = new FormData();
     formData.append("title", finalData.title);
@@ -72,9 +71,7 @@ export const ProductAddForm = () => {
     formData.append("category", finalData.category);
     formData.append("englishTitle", finalData.englishTitle);
     formData.append("status", finalData.status);
-    files.forEach((item) => {
-      formData.append("images", item);
-    });
+
     finalData.tools.forEach((item, index) => {
       formData.append(`properties[${index}][name]`, item.name);
       formData.append(`properties[${index}][value]`, item.value);
@@ -82,19 +79,20 @@ export const ProductAddForm = () => {
     mutate(formData);
   };
 
-  // تابع جدید برای دریافت هم‌زمان چند عکس و محدودیت حداکثر ۳ عکس
-  const handleImage = (e) => {
-    const selectedFiles = Array.from(e.target.files);
-    setFiles((prev) => {
-      const updatedFiles = [...prev, ...selectedFiles];
-      return updatedFiles.slice(0, 3); // عدم اجازه به ذخیره بیش از ۳ عکس
-    });
-    e.target.value = null; // جهت امکان انتخاب مجدد همان فایل در صورت نیاز
-  };
+  useEffect(()=> {
+    if (productData) {
+      reset({
+        title:productData?.title,
+        englishTitle:productData?.englishTitle,
+        status:productData?.status,
+        category:productData?.category,
+        price:productData?.price,
+        quantity:productData?.quantity,
+        tools: productData?.properties ? productData?.properties.map((item)=> ({name: item.name, value:item.value})) : [{name: '' , value: '',}],
+      })
+    }
+  },[productData])
 
-  const handleDelImg = (index) => {
-    setFiles((prev) => prev.filter((_, i) => index !== i));
-  };
 
   return (
     <>
@@ -244,52 +242,8 @@ export const ProductAddForm = () => {
           </button>
         </div>
 
-        {/* اینپوت عکس با قابلیت انتخاب هم‌زمان چند فایل */}
-        {files.length < 3 && (
-          <div className="product-form-item">
-            <p>{t("product.product_add_page.product_img_title")}</p>
-            <input
-              className="product-form-item-inp"
-              onChange={handleImage}
-              type="file"
-              accept="image/*"
-              multiple
-            />
-          </div>
-        )}
 
-        {/* نمایش لیست عکس‌ها همراه با آیکون SVG در مرکز دکمه حذف */}
-        <div className="product-add-form-img-cont">
-          {files.map((item, index) => (
-            <div key={index} className="product-add-form-img-cont-item">
-              <img
-                className="product-add-form-img"
-                src={URL.createObjectURL(item)}
-                alt={`product-img-${index}`}
-              />
 
-              <button
-                type="button"
-                className="product-add-form-delete-btn"
-                onClick={() => handleDelImg(index)}
-              >
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-            </div>
-          ))}
-        </div>
 
         {isPending ? (
           <button type="button" className="product-form-btn-loader">

@@ -1,0 +1,26 @@
+.cmodal {
+    position: fixed;
+    inset: 0;
+    background-color: #000000ab;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.cmodal-active {
+    z-index: 6;
+    opacity: 1;
+    visibility: visible;
+}
+.cmodal-cont {
+    width: 600px;
+    max-width: 95%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--color-1);
+}

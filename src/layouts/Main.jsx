@@ -6,6 +6,7 @@ import { Dashboard } from "../pages/dashboard/Dashboard";
 import { Settings } from "../pages/settings/Settings";
 import { ProductManagement } from "../pages/product/management/ProductManagement";
 import { ProductAdd } from "../pages/product/add/ProductAdd";
+import { ProductEdit } from "../pages/product/edit/ProductEdit";
 
 export const Main = ({ handleSideBar, setHandleSideBar, children }) => {
   return (
@@ -19,6 +20,7 @@ export const Main = ({ handleSideBar, setHandleSideBar, children }) => {
           <Route path="/settings" element={<Settings />}></Route>
           <Route path="/product/management" element={<ProductManagement />}></Route>
           <Route path="/product/add" element={<ProductAdd />}></Route>
+          <Route path="/product/edit/:id" element={<ProductEdit />}></Route>
         </Routes>
         </div>
       </main>

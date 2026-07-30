@@ -14,6 +14,17 @@ i18next.use(initReactI18next).init({
         sidebar: {
           new_project_btn: "New Project",
         },
+        auth: {
+          login: "Login",
+          signin: "Sign in",
+          login_email_place: "Enter your email...",
+          login_pass_place: "Enter your password...",
+          login_btn: "Login",
+          register_name_place: "Enter your FullName...",
+          register_email_place: "Enter your email...",
+          register_pass_place: "Enter your password...",
+          register_btn: "Register",
+        },
         theme: {
           light_theme: "light",
           dark_theme: "dark",
@@ -25,7 +36,6 @@ i18next.use(initReactI18next).init({
         },
         dashboard: {
           sale: "The amount of sales",
-          currency_unit: "Rial",
         },
         layout: {
           dashboard_menu: "Dashboard",
@@ -43,8 +53,18 @@ i18next.use(initReactI18next).init({
           },
           product_add_page: {
             product_add_page_title: "Add Products",
-            product_name_title: "Product title",
-            product_name_title_placeholder: "Enter the product name...",
+            product_edit_page_title: "Edit Products",
+
+            product_name_title: "Product persian title",
+            product_name_title_placeholder: "Enter the product persian name...",
+            product_name_en_title: "Product english title",
+            product_name_en_title_placeholder:
+              "Enter the product english name...",
+            product_status_title: "Product Status",
+            product_status_title_placeholder: "Select the product status...",
+            product_category_title: "Product Category",
+            product_category_title_placeholder:
+              "Select the product category...",
             product_price_title: "Product price",
             product_price_title_placeholder: "Enter the product price...",
             product_quantity_title: "Product Inventory",
@@ -57,6 +77,8 @@ i18next.use(initReactI18next).init({
             product_add_btn: "Add",
             errors: {
               title_required: "Product name is required",
+              title_status_required: "Product status is required",
+              title_category_required: "Product category is required",
               title_min: "Product name must be at least 2 characters",
               price_required: "Price is required",
               price_positive: "Price must be greater than zero",
@@ -66,8 +88,8 @@ i18next.use(initReactI18next).init({
               quantity_type: "Quantity must be a number",
               feature_name_required: "Feature name is required",
               feature_value_required: "Feature value is required",
-              feature_min: "At least two features are required"
-            }
+              feature_min: "At least two features are required",
+            },
           },
           table: {
             product_name: "Product Name",
@@ -79,7 +101,7 @@ i18next.use(initReactI18next).init({
             edit_product: "Edit Product",
           },
           product_rules: {
-            title: "Product Submission Guidelines",
+            title: "Product Registration Guidelines",
             description:
               "Providing accurate and complete product information helps improve store management and enhances the customer experience. Please enter a clear product title, provide the correct price and inventory, and add at least two product features. We also recommend uploading a high-quality image that represents the product. Once you have verified all the information, you can safely submit the product.",
           },
@@ -91,8 +113,8 @@ i18next.use(initReactI18next).init({
             search_product: "Product Search",
             status: {
               all: "All",
-              enable: "Enable",
-              disable: "Disable",
+              enable: "Active",
+              disable: "Deactive",
             },
           },
         },
@@ -137,7 +159,6 @@ i18next.use(initReactI18next).init({
         },
         dashboard: {
           sale: "میزان فروش",
-          currency_unit: "ریال",
         },
         layout: {
           dashboard_menu: "داشبورد",
@@ -154,8 +175,17 @@ i18next.use(initReactI18next).init({
           },
           product_add_page: {
             product_add_page_title: "افزودن محصولات",
-            product_name_title: "افزودن محصول",
-            product_name_title_placeholder: "نام محصول را وارد کنید...",
+            product_edit_page_title: "ویرایش محصولات",
+            product_name_title: "نام فارسی محصول",
+            product_name_title_placeholder: "نام فارسی محصول را وارد کنید...",
+            product_name_en_title: "نام انگلیسی محصول",
+            product_name_en_title_placeholder:
+              "نام انگلیسی محصول را وارد کنید...",
+            product_status_title: "وضعیت محصول",
+            product_status_title_placeholder: "وضعیت محصول را انتخاب کنید...",
+            product_category_title: "دسته بندی محصول",
+            product_category_title_placeholder:
+              "دسته بندی محصول را انتخاب کنید...",
             product_price_title: "قیمت محصول",
             product_price_title_placeholder: "قیمت محصول را وارد کنید...",
             product_quantity_title: "موجودی محصول",
@@ -167,6 +197,8 @@ i18next.use(initReactI18next).init({
             product_add_btn: "افزودن",
             errors: {
               title_required: "نام محصول الزامی است",
+              title_status_required: "وضعیت محصول الزامی است",
+              title_category_required: "دسته بندی محصول الزامی است",
               title_min: "نام محصول باید حداقل ۲ کاراکتر باشد",
               price_required: "قیمت محصول الزامی است",
               price_positive: "قیمت باید بیشتر از صفر باشد",
@@ -176,8 +208,8 @@ i18next.use(initReactI18next).init({
               quantity_type: "موجودی باید عدد باشد",
               feature_name_required: "نام ویژگی الزامی است",
               feature_value_required: "مقدار ویژگی الزامی است",
-              feature_min: "حداقل دو ویژگی برای محصول وارد کنید"
-            }
+              feature_min: "حداقل دو ویژگی برای محصول وارد کنید",
+            },
           },
           table: {
             product_name: "نام محصول",
@@ -191,7 +223,7 @@ i18next.use(initReactI18next).init({
           product_rules: {
             title: "قوانین ثبت محصول",
             description:
-              "ثبت اطلاعات صحیح و کامل محصول باعث مدیریت بهتر فروشگاه و تجربه بهتر کاربران می‌شود. لطفاً نام محصول را به‌صورت واضح وارد کنید، قیمت و موجودی را به‌درستی ثبت نمایید و حداقل دو ویژگی برای محصول اضافه کنید. همچنین توصیه می‌شود از یک تصویر باکیفیت و مرتبط با محصول استفاده کنید تا نمایش مناسب‌تری در فروشگاه داشته باشد. پس از اطمینان از صحت اطلاعات، محصول را ثبت کنید.",
+              "ثبت اطلاعات دقیق و کامل محصول، به مدیریت بهتر فروشگاه و بهبود تجربه خرید کاربران کمک می‌کند. لطفاً هنگام ثبت محصول موارد زیر را رعایت کنید:نام محصول: نام محصول را به‌صورت واضح و حداقل در ۲ کاراکتر وارد کنید. قیمت و موجودی: قیمت دقیق و مقدار موجودی انبار را با اعداد معتبر و مثبت ثبت نمایید. ویژگی‌های محصول: افزودن حداقل ۲ ویژگی (نام و مقدار مشخصه) برای معرفی بهتر کالا الزامی است. تصاویر محصول: می‌توانید تا حداکثر ۳ تصویر باکیفیت و مرتبط با محصول بارگذاری کنید. پس از بررسی نهایی و اطمینان از صحت اطلاعات، می‌توانید محصول خود را ثبت کنید.",
           },
           product_add: {
             product_add: "ثبت محصولات",

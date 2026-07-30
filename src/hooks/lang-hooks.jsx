@@ -13,7 +13,7 @@ export const useLang = () => {
   };
 
   const initLang = () => {
-    let dir = i18n.language === "fa" ? "rtl" : "ltr";
+    let dir = i18n.language === "en" ? "ltr" : "rtl";
     document.documentElement.dir = dir;
     setLang(i18n.language)
   };

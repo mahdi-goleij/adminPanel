@@ -6,5 +6,7 @@ export const useLayoutStore = create((set) => ({
     theme:'dark',
     setTheme:  (value) => set({theme: value}),
     lang:'fa',
-    setLang:  (value) => set({lang: value})
+    setLang:  (value) => set({lang: value}),
+    visibleProductModal: false,
+    setVisibleProductModal:  (value) => set({visibleProductModal: value}),
 }))

@@ -50,12 +50,12 @@ export const ProductFilter = () => {
 
   const handleDate = (value) => {
     if (Array.isArray(value) && value?.[1]) {
-      let start = value[0];
-      let end = value[1];
+      let start = value[0].toDate();
+      let end = value[1].toDate();
       setFilter((prev) => ({
         ...prev,
-        start: start?.format("YYYY/MM/DD"),
-        end: end?.format("YYYY/MM/DD"),
+        start: start?.toISOString().slice(0,10),
+        end: end?.toISOString().slice(0,10),
       }));
     }
   };
@@ -106,7 +106,7 @@ export const ProductFilter = () => {
           <DatePicker
             placeholder={t('product.product_filter.time_range')}
             range
-            value={[filter?.start, filter?.end]}
+            value={[new Date(filter?.start), new Date(filter?.end)]}
             onChange={handleDate}
             calendar={persian}
             locale={persian_fa}

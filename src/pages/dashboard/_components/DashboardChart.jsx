@@ -9,8 +9,11 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { useTranslation } from "react-i18next";
 
-export const DashboardChart = () => {
+export const DashboardChart = ({chartData}) => {
+
+  const {i18n} = useTranslation();
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -19,7 +22,8 @@ export const DashboardChart = () => {
     Title,
     Tooltip,
     Legend
-  );
+  );  
+
 
   const options = {
     responsive: true,
@@ -36,14 +40,14 @@ export const DashboardChart = () => {
     },
   };
 
-  const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+  const labels = i18n.language === "fa" ? chartData?.fa_labels : chartData?.en_labels;
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Dataset 1",
-        data: [85, 36, 45, 32, 14, 25, 64],
+        label: i18n.language === "fa" ? "دیتابیس 1" : "Dataset 1",
+        data: chartData?.value,
         borderColor: "#bff474",
       },
     ],

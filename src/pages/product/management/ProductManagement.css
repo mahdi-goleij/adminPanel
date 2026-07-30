@@ -56,20 +56,31 @@
   outline-color: var(--color-3) !important;
   /* border-color: var(--color-3) !important; */
 }
+.product-list .rdt_noData {
+  background-color: var(--color-2);
+  color: var(--color-6);
+  border-radius: 30px;
+}
 
 .product-list-name {
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-block: 5px; 
+  margin-block: 5px;
   & img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-  } 
+  }
 }
 
-.product-list-btn {
+.product-list-cont {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-list-btn:nth-child(1) {
   width: 40px;
   height: 40px;
   background-color: #0781c3;
@@ -83,6 +94,22 @@
     width: 30px;
     height: 30px;
     stroke: var(--color-6);
+  }
+}
+.product-list-btn:nth-child(2) {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  & svg {
+    width: 30px;
+    height: 30px;
+    fill: #000;
   }
 }
 
@@ -190,6 +217,7 @@
   }
 }
 
+
 .product-filter-date .rmdp-wrapper {
   background-color: var(--color-2);
 }
@@ -201,4 +229,65 @@
 }
 .product-filter-date .rmdp-shadow {
   box-shadow: 0 0 5px #555;
+}
+.product-filter-date .rmdp-month-picker,
+.product-filter-date .rmdp-year-picker {
+  background-color: var(--color-4);
+}
+.product-filter-date .rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: var(--color-3);
+  color: var(--color-1);
+}
+.product-filter-date
+  .rmdp-day:not(.rmdp-disabled, .product-filter-date .rmdp-day-hidden)
+  span:hover {
+  background-color: color-mix(in srgb, var(--color-3) 60%, white);
+  color: var(--color-1);
+}
+.product-filter-date .rmdp-range {
+  background-color: var(--color-3);
+  color: var(--color-1);
+}
+
+.product-filter-date .rmdp-day.rmdp-today span {
+  background-color: color-mix(in srgb, var(--color-3) 60%, white);
+  color: var(--color-1);
+
+}
+.product-filter-date .rmdp-week-day {
+  color: var(--color-3);
+}
+
+
+.product-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & button {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--color-3);
+    color: var(--color-3);
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+}
+.product-details-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-2);
+  border-radius: 10px;
+  padding-inline: 10px;
+  margin-bottom: 10px;
+  & span {
+    color: var(--color-7);
+    font-size: 14px;
+  }
+  & p {
+    color: var(--color-3);
+  }
 }

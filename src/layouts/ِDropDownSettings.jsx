@@ -4,6 +4,7 @@ import { useLayoutStore } from "../store/LayoutStore";
 import { useTheme } from "../hooks/theme-hooks";
 import { useLang } from "../hooks/lang-hooks";
 import { useTranslation } from "react-i18next";
+import { useLogout } from "../hooks/auth-hooks";
 
 export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
   const {theme , lang} = useLayoutStore();
@@ -12,7 +13,7 @@ export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
 
   const {handaleLange} = useLang()
   const {t} = useTranslation();
-
+  const {mutate} = useLogout()
 
 
 
@@ -33,7 +34,7 @@ export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
     //   direction: 'ltr',
     // },
     // {
-    //   title: "عربی",
+    //   title: "عربي",
     //   symbol: "ar",
     //   direction: 'rtl',
     // },
@@ -76,7 +77,7 @@ export const DropDownSettings = ({visibleDrop, setVisibleDrop}) => {
             <SvgUser />
             <span>{t('dropdown.profile')}</span>
           </div>
-          <div className="drop-setting-botton-item">
+          <div onClick={() => mutate()} className="drop-setting-botton-item">
             <SvgLogOut />
             <span>{t('dropdown.logout')}</span>
           </div>
