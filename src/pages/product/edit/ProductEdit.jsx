@@ -10,11 +10,14 @@ export const ProductEdit = () => {
   const { setTitlePage } = useLayoutStore();
   const { t } = useTranslation();
   const { id } = useParams();
-  const { data } = useSingleProduct(id);
+  const { data, refetch } = useSingleProduct(id);
 
   useEffect(() => {
     setTitlePage(t("product.product_add_page.product_edit_page_title"));
   }, [t]);
+  useEffect(() => {
+    refetch()
+  }, []);
 
   return (
     <>

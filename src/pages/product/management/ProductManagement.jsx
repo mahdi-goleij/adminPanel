@@ -10,14 +10,37 @@ import { useTranslation } from "react-i18next";
 import { useProduct } from "../../../hooks/product-hooks";
 import { Link, useSearchParams } from "react-router-dom";
 import { ProductDetails } from "./_component/productDetails";
+import { useProductStore } from "../../../store/ProductStore";
+import { SvgTrash } from "../../../icons/SvgTrash";
+import { ProductDelete } from "./_component/ProductDelete";
 
 export const ProductManagement = () => {
-  const { setTitlePage ,visibleProductModal , setVisibleProductModal } = useLayoutStore();
+  const { setTitlePage } = useLayoutStore();
+  const { setVisibleProductModal , setSelectedProduct , setVisibleDel } = useProductStore();
   const { t, i18n } = useTranslation();
 
   const [searchParams] = useSearchParams();
   let query = searchParams.toString();
   const { data } = useProduct(query);
+
+
+
+  const handleDetail = (product) => {
+    setVisibleProductModal(true);
+    setSelectedProduct(product)
+  }
+  
+  const handleDelete = (product) => {
+    setVisibleDel(true)
+    setSelectedProduct(product)
+  }
+
+
+
+
+
+
+
 
   const columns = [
     {
@@ -72,8 +95,11 @@ export const ProductManagement = () => {
               <SvgEdit />
             </button>
           </Link>
-          <button onClick={()=> {setVisibleProductModal(true)}} className="product-list-btn">
+          <button onClick={()=> {handleDetail(row)}} className="product-list-btn">
             <SVGDetail />
+          </button>
+          <button onClick={()=> {handleDelete(row)}} className="product-list-btn">
+            <SvgTrash />
           </button>
         </div>
       ),
@@ -106,8 +132,8 @@ export const ProductManagement = () => {
       />
 
 
-      <ProductDetails visibleProductModal={visibleProductModal} setVisibleProductModal={setVisibleProductModal} />
-
+      <ProductDetails />
+      <ProductDelete />
 
     </>
   );

@@ -98,12 +98,14 @@ const SubMenu = ({ submenuData, handleRoute , parentIndex }) => {
 };
 
 const SideMenu = ({ submenuData , handleRoute, parentIndex }) => {
+  const {t} = useTranslation()
+
   return (
     <>
       <div className="sideBar-center-item-sideMenu">
         {submenuData.map((item, index) => (
           <div key={index} onClick={()=> handleRoute(parentIndex, item)} className="sideBar-center-item-sideMenu-item">
-            {item.title}
+            {t(item.title)}
           </div>
         ))}
       </div>

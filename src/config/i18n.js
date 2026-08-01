@@ -50,6 +50,13 @@ i18next.use(initReactI18next).init({
           product_name: "Product Name",
           product_manage: {
             product_management: "Product Management",
+            product_modal_close_btn: "Close",
+          },
+          delete_modal: {
+            confirm_message:
+              "Are you sure you want to delete the product {{name}}?",
+            btn_delete: "Delete Product",
+            btn_cancel: "Cancel",
           },
           product_add_page: {
             product_add_page_title: "Add Products",
@@ -145,6 +152,17 @@ i18next.use(initReactI18next).init({
         sidebar: {
           new_project_btn: "پروژه جدید",
         },
+        auth: {
+          login: "ورود",
+          signin: "ثبت نام",
+          login_email_place: "ایمیل خود را وارد کنید...",
+          login_pass_place: "رمز خود را وارد کنید...",
+          login_btn: "ورود",
+          register_name_place: "نام کامل خود را وارد کنید...",
+          register_email_place: "ایمیل خود را وارد کنید...",
+          register_pass_place: "رمز خود را وارد کنید...",
+          register_btn: "ثبت نام",
+        },
         profilesideBar: {
           edit_btn: "ویرایش پروفایل",
         },
@@ -172,7 +190,14 @@ i18next.use(initReactI18next).init({
           product_name: "نام محصول",
           product_manage: {
             product_management: "مدیریت محصولات",
+            product_modal_close_btn: "بستن",
           },
+          delete_modal: {
+            confirm_message: "آیا از حذف محصول {{name}} مطمئن هستید؟", // 👈 این یک متن معتبر است
+            btn_delete: "حذف محصول",
+            btn_cancel: "انصراف",
+          },
+
           product_add_page: {
             product_add_page_title: "افزودن محصولات",
             product_edit_page_title: "ویرایش محصولات",

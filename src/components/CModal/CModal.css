@@ -7,10 +7,9 @@
     z-index: -1;
     opacity: 0;
     visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: auto;
     transition: all 0.3s;
+    padding-block: 20px;
 }
 .cmodal-active {
     z-index: 6;
@@ -23,4 +22,5 @@
     padding: 20px;
     border-radius: 20px;
     background-color: var(--color-1);
+    margin-inline: auto;
 }

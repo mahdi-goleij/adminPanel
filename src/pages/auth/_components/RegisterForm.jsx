@@ -8,13 +8,12 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useRegister } from "../../../hooks/auth-hooks";
 import { BtnLoader } from "../../../components/BtnLoader/BtnLoader";
+import { SvgProfile } from "../../../icons/SvgProfile";
 
 export const RegisterForm = ({ setFormType }) => {
   const formRef = useRef();
   const navigation = useNavigate();
-    const {mutate, isPending} = useRegister(setFormType);
-  
-
+  const { mutate, isPending } = useRegister(setFormType);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -63,12 +62,13 @@ export const RegisterForm = ({ setFormType }) => {
             placeholder={t("auth.register_pass_place")}
           />
         </label>
+
         {isPending ? (
           <button className="auth-form-btn-loading">
             <BtnLoader />
           </button>
         ) : (
-        <button className="auth-form-btn">{t("auth.register_btn")}</button>
+          <button className="auth-form-btn">{t("auth.register_btn")}</button>
         )}
       </form>
     </>

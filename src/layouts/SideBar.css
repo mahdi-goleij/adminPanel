@@ -13,16 +13,33 @@
 .sideBar-handle {
   width: 60px;
 }
+
 @media (width < 767px) {
   .sideBar {
     width: 250px;
-    transform: translateX(250px);
+    left: auto !important;
+    right: 0 !important;
+    transform: translateX(100%) !important;
   }
-  .sideBar-handle {
-    width: 250px;
-    transform: translateX(0);
+  .sideBar.sideBar-handle {
+    transform: translateX(0) !important;
+  }
+  [dir= "ltr"] .sideBar {
+    right: auto !important;
+    left: 0 !important;
+    transform: translateX(-250px) !important;
+  }
+  [dir= "ltr"] .sideBar.sideBar-handle {
+    transform: translateX(0) !important;
   }
 }
+
+
+
+
+
+
+
 .sideBar-head {
   width: 100%;
   height: 80px;
@@ -148,33 +165,74 @@
 .sideBar-center-item-active .sideBar-center-item-menu {
   max-height: 600px;
 }
+
 .sideBar-center-item-active button {
   background-color: var(--color-8);
-
   color: var(--color-6);
   & svg {
     fill: var(--color-6);
   }
 }
-.sideBar-handle .sideBar-center-item-menu {
-  max-height: 0;
-}
-@media (width < 767px) {
-  .sideBar-handle .sideBar-center-item-active .sideBar-center-item-menu {
-    max-height: 600px;
-  }
-}
+
 .sideBar-center-item-menu-item {
   width: 100%;
   height: 40px;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   padding-inline-start: 40px;
   color: var(--color-7);
   cursor: pointer;
   &:hover {
     color: var(--color-6);
+  }
+}
+
+/* ========================================================= */
+/* تنظیمات سایدبار جمع شده در دسکتاپ (sideBar-handle)        */
+/* ========================================================= */
+@media (width >= 767px) {
+  .sideBar-handle .sideBar-center-item {
+    position: relative; /* مهم: برای اینکه منو نسبت به همین آیتم قرار بگیره */
+  }
+  
+  .sideBar-handle .sideBar-center-item-menu {
+    position: absolute;
+    top: 0;
+    width: 200px; /* عرض منو وقتی پاپ‌آپ میشه */
+    background-color: var(--color-2);
+    border-radius: var(--br);
+    z-index: 10;
+    
+    /* پیش‌فرض فارسی (RTL): منو به سمت چپِ سایدبار باز میشه */
+    right: 100%;
+    left: auto;
+  }
+  
+  /* حالت انگلیسی (LTR): منو به سمت راستِ سایدبار باز میشه */
+  [dir="ltr"] .sideBar-handle .sideBar-center-item-menu {
+    left: 100%;
+    right: auto;
+  }
+  
+  /* نمایش منو موقع هاور کردن در دسکتاپ */
+  .sideBar-handle .sideBar-center-item:hover .sideBar-center-item-menu {
+    max-height: 600px;
+    overflow: visible;
+  }
+}
+
+/* ========================================================= */
+/* تنظیمات موبایل                                            */
+/* ========================================================= */
+.sideBar-handle .sideBar-center-item-menu {
+  max-height: 0; /* در حالت عادی بسته باشه */
+}
+
+@media (width < 767px) {
+  .sideBar-handle .sideBar-center-item-active .sideBar-center-item-menu {
+    max-height: 600px;
+    position: static; /* در موبایل آکاردئونی باز بشه، نه پاپ‌آپ */
+    width: 100%;
   }
 }
 .sideBar-center-item {

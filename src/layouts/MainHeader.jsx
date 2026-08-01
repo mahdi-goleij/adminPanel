@@ -5,13 +5,13 @@ import { useContext, useState } from "react";
 import { DropDownSettings } from "./ِDropDownSettings";
 import { useLayoutStore } from "../store/LayoutStore";
 import { useTranslation } from "react-i18next";
+import { useAuthStore } from "../store/AuthStore";
 
 export const MainHeader = ({ setHandleSideBar }) => {
   const [visibleDrop, setVisibleDrop] = useState(false);
   const {titlePage} = useLayoutStore()
+  const {user} = useAuthStore(); // ۲. گرفتن اطلاعات کاربر از Zustand
   const {t} = useTranslation();
-
-
 
   return (
     <>
@@ -35,15 +35,15 @@ export const MainHeader = ({ setHandleSideBar }) => {
           className="main-header-left"
         >
           <div>
-            <span>مهدی گلیج</span>
-            <span>@MahdiGoleij</span>
+            {/* ۳. نمایش نام کامل و ایمیل پویا با یک شرط امنیتی کوچک */}
+            <span>{user?.fullName || "کاربر مهمان"}</span>
+            <span>{user?.email || "email@example.com"}</span>
           </div>
           <img src={ImgProfile} alt="profile" />
         </div>
       </div>
 
       <DropDownSettings visibleDrop={visibleDrop} setVisibleDrop={setVisibleDrop} />
-
     </>
   );
 };

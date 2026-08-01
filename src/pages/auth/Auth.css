@@ -80,6 +80,10 @@
     border: 2px solid var(--color-4);
     border-radius: var(--br);
     margin-bottom: 30px;
+    & span {
+        color: var(--color-5);
+
+    }
 
 }
 .auth-form label input {
@@ -92,6 +96,28 @@
     &::placeholder {
         color: var(--color-5);
     }
+}
+.file-upload-label-svg {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    & span {
+        font-size: 14px;
+    }
+    & svg {
+        stroke: var(--color-5);
+        width: 30px;
+    }
+}
+.auth-form .file-upload-label {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--color-4);
+    border-radius: var(--br);
+    margin-bottom: 30px;
+    padding-inline-start: 5px;
 }
 .auth-form label input:focus {
     outline: none;
@@ -127,4 +153,39 @@
         width: 50px;
 
     }
+}
+.auth-settings {
+    width: 100%;
+    max-width: 480px; 
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;
+    padding-inline: 15px; 
+    margin-bottom: 20px;
+}
+
+.auth-settings-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--color-4);
+    color: var(--color-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.auth-settings-btn.lang-btn {
+    font-size: 14px;
+}
+
+.auth-settings-btn:hover {
+    background-color: var(--color-3);
+    border-color: var(--color-3);
+    color: var(--color-1); 
 }
