@@ -4,9 +4,9 @@ import { SvgSearch } from "../icons/SvgSearch";
 import { MainHeader } from "./MainHeader";
 import { Dashboard } from "../pages/dashboard/Dashboard";
 import { Settings } from "../pages/settings/Settings";
-import { ProductManagement } from "../pages/product/management/ProductManagement";
 import { ProductAdd } from "../pages/product/add/ProductAdd";
 import { ProductEdit } from "../pages/product/edit/ProductEdit";
+import { ProductManagement } from "../pages/product/management/ProductManagement";
 
 export const Main = ({ handleSideBar, setHandleSideBar, children }) => {
   return (
