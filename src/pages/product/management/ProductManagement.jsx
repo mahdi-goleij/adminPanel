@@ -9,10 +9,10 @@ import { SVGDetail } from "../../../icons/SvgDetail";
 import { useTranslation } from "react-i18next";
 import { useProduct } from "../../../hooks/product-hooks";
 import { Link, useSearchParams } from "react-router-dom";
-import { ProductDetails } from "./_component/productDetails";
 import { useProductStore } from "../../../store/ProductStore";
 import { SvgTrash } from "../../../icons/SvgTrash";
 import { ProductDelete } from "./_component/ProductDelete";
+import { ProductDetails } from "./_component/ProductDetails";
 
 export const ProductManagement = () => {
   const { setTitlePage } = useLayoutStore();
