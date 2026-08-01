@@ -12,7 +12,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useProductStore } from "../../../store/ProductStore";
 import { SvgTrash } from "../../../icons/SvgTrash";
 import { ProductDelete } from "./_component/ProductDelete";
-import { ProductDetails } from "./_component/ProductDetails";
+import { ProductDetails } from "./_component/productDetails";
 
 export const ProductManagement = () => {
   const { setTitlePage } = useLayoutStore();
