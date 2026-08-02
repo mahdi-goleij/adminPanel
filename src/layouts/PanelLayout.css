@@ -112,13 +112,31 @@
     @media (width < 767px) {
       font-size: 14px;
     }
+    @media (width < 455px) {
+      max-width: 80px;
+      font-size: 14px;
+    }
     span:nth-of-type(1) {
       color: var(--color-6);
       text-align: center;
+      @media (width < 455px) {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+      }
     }
     span:nth-of-type(2) {
       direction: ltr;
       color: var(--color-6);
+      @media (width < 455px) {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+      }
     }
   }
 }

@@ -16,31 +16,22 @@ import { ProductDetails } from "./_component/ProductDetails";
 
 export const ProductManagement = () => {
   const { setTitlePage } = useLayoutStore();
-  const { setVisibleProductModal , setSelectedProduct , setVisibleDel } = useProductStore();
+  const { setVisibleProductModal, setSelectedProduct, setVisibleDel } =
+    useProductStore();
   const { t, i18n } = useTranslation();
-
   const [searchParams] = useSearchParams();
   let query = searchParams.toString();
   const { data } = useProduct(query);
 
-
-
   const handleDetail = (product) => {
     setVisibleProductModal(true);
-    setSelectedProduct(product)
-  }
-  
+    setSelectedProduct(product);
+  };
+
   const handleDelete = (product) => {
-    setVisibleDel(true)
-    setSelectedProduct(product)
-  }
-
-
-
-
-
-
-
+    setVisibleDel(true);
+    setSelectedProduct(product);
+  };
 
   const columns = [
     {
@@ -95,10 +86,20 @@ export const ProductManagement = () => {
               <SvgEdit />
             </button>
           </Link>
-          <button onClick={()=> {handleDetail(row)}} className="product-list-btn">
+          <button
+            onClick={() => {
+              handleDetail(row);
+            }}
+            className="product-list-btn"
+          >
             <SVGDetail />
           </button>
-          <button onClick={()=> {handleDelete(row)}} className="product-list-btn">
+          <button
+            onClick={() => {
+              handleDelete(row);
+            }}
+            className="product-list-btn"
+          >
             <SvgTrash />
           </button>
         </div>
@@ -131,10 +132,8 @@ export const ProductManagement = () => {
         customStyles={customStyles}
       />
 
-
       <ProductDetails />
       <ProductDelete />
-
     </>
   );
 };
