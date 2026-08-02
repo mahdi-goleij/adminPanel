@@ -9,6 +9,7 @@ i18next.use(initReactI18next).init({
           search_placeholder: "Search...",
         },
         profilesideBar: {
+          guestUser: "Guest User",
           edit_btn: "Edit Profile",
         },
         sidebar: {
@@ -164,6 +165,7 @@ i18next.use(initReactI18next).init({
           register_btn: "ثبت نام",
         },
         profilesideBar: {
+          guestUser: "کاربر مهمان",
           edit_btn: "ویرایش پروفایل",
         },
         theme: {

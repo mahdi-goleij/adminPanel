@@ -36,7 +36,7 @@ export const MainHeader = ({ setHandleSideBar }) => {
         >
           <div>
             {/* ۳. نمایش نام کامل و ایمیل پویا با یک شرط امنیتی کوچک */}
-            <span>{user?.fullName || "کاربر مهمان"}</span>
+            <span>{user?.fullName || t('profilesideBar.guestUser')}</span>
             <span>{user?.email || "email@example.com"}</span>
           </div>
           <img src={ImgProfile} alt="profile" />
