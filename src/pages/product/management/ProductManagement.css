@@ -61,6 +61,9 @@
   color: var(--color-6);
   border-radius: 30px;
 }
+.product-list .rdt_columnSortable {
+  justify-content: center;
+}
 
 .product-list-name {
   display: flex;
@@ -273,6 +276,7 @@
 .product-filter-date .rmdp-week-day {
   color: var(--color-3);
 }
+
 
 
 .product-details {

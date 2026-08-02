@@ -44,14 +44,37 @@ export const ProductManagement = () => {
           </div>
         </>
       ),
+      style: {
+        justifyContent: "center",
+        display: "flex",
+      },
     },
     {
       name: t("product.table.product_price"),
       selector: (row) => row.price,
+      style: {
+        justifyContent: "center",
+        display: "flex",
+      },
       sortable: true,
     },
-    { name: "موجودی", selector: (row) => row.quantity, sortable: true },
-    { name: "دسته بندی", selector: (row) => row.category },
+    {
+      name: "موجودی",
+      selector: (row) => row.quantity,
+      style: {
+        justifyContent: "center",
+        display: "flex",
+      },
+      sortable: true,
+    },
+    {
+      name: "دسته بندی",
+      selector: (row) => row.category,
+      style: {
+        justifyContent: "center",
+        display: "flex",
+      },
+    },
     {
       name: t("product.table.status"),
       selector: (row) => (
@@ -68,6 +91,10 @@ export const ProductManagement = () => {
           )}
         </>
       ),
+      style: {
+        justifyContent: "center",
+        display: "flex",
+      },
     },
     {
       name: t("product.table.create_date"),
@@ -76,6 +103,10 @@ export const ProductManagement = () => {
           ? new Date(row.createdAt).toLocaleDateString("fa")
           : new Date(row.createdAt).toLocaleDateString(),
       sortable: true,
+      style: {
+        justifyContent: "center",
+        display: "flex",
+      },
     },
     {
       name: t("product.table.edit_product"),
@@ -104,6 +135,10 @@ export const ProductManagement = () => {
           </button>
         </div>
       ),
+      style: {
+        justifyContent: "center",
+        display: "flex",
+      },
     },
   ];
 
@@ -139,20 +174,47 @@ export const ProductManagement = () => {
 };
 
 const customStyles = {
+  // ۱. تنظیمات سرستون‌ها
+  headCells: {
+    style: {
+      display: "flex",
+      justifyContent: "center", // وسط‌چین کردن افقی سرستون‌ها
+      alignItems: "center",     // وسط‌چین کردن عمودی سرستون‌ها
+      textAlign: "center",
+      fontWeight: "bold",
+    },
+  },
+
+  // ۲. تنظیمات سلول‌های داده (مقادیر)
+  cells: {
+    style: {
+      display: "flex",
+      justifyContent: "center", // وسط‌چین کردن افقی مقادیر
+      alignItems: "center",     // وسط‌چین کردن عمودی مقادیر
+      textAlign: "center",
+    },
+  },
+
+  // ۳. تنظیمات ردیف هدر
+  headRow: {
+    style: {
+      // اگر استایلی خواستی اینجا بذار (مثلا border)
+    },
+  },
+
+  // ۴. تنظیمات ردیف‌های جدول
+  rows: {
+    style: {
+      // استایل‌های ردیف‌ها
+    },
+  },
+
+  // ۵. تنظیمات صفحه‌بندی (کاملاً جدا و مستقل)
   pagination: {
     style: {
       backgroundColor: "var(--color-2)",
       color: "var(--color-6)",
       borderTop: "none",
     },
-    pageButtonsStyle: {
-      // '&:hover':
-    },
-  },
-  headRow: {
-    style: {},
-  },
-  rows: {
-    style: {},
   },
 };
