@@ -1,0 +1,29 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+  fill="none"
+>
+  <!-- پس‌زمینه تیره گوشه‌گرد برای جلوه بهتر لوگو -->
+  <rect width="100" height="100" rx="22" fill="#111827" />
+
+  <!-- حرف M: ترکیب خطوط شکسته مدرن -->
+  <path
+    d="M22 68V34L37 52L52 34V68"
+    stroke="#BFF747"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- حرف G: فرم هندسی و متصل به فضای مدرن -->
+  <path
+    d="M78 44C76.5 38 72 34 65 34C56.5 34 50 41 50 51C50 61 56.5 68 65 68C72 68 77 63 78 56H65"
+    stroke="#BFF747"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- یک نقطه دکوراتیو کوچک برای تعادل بصری طرح -->
+  <circle cx="82" cy="68" r="4" fill="#BFF747" />
+</svg>
