@@ -44,6 +44,8 @@ export const ProductManagement = () => {
           </div>
         </>
       ),
+      width: "200px",
+
       style: {
         justifyContent: "center",
         display: "flex",
@@ -135,6 +137,7 @@ export const ProductManagement = () => {
           </button>
         </div>
       ),
+      width: "200px",
       style: {
         justifyContent: "center",
         display: "flex",
